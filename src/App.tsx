@@ -1,7 +1,5 @@
-import { useState } from "react";
-
-function App() {
-  return <div>Amazing</div>;
-}
+const App = () => {
+  return <div>Why</div>;
+};
 
 export default App;
