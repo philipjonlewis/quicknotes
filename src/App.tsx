@@ -1,5 +1,11 @@
+import EditorJs from "./components/Editor/EditorJs";
+
 const App = () => {
-  return <div>Why</div>;
+  return (
+    <div>
+      <EditorJs />
+    </div>
+  );
 };
 
 export default App;
