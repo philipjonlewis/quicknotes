@@ -1,6 +1,6 @@
 import React from "react";
 import { LandingNavbar } from "..";
-const PublicLayout = ({ children }) => {
+const PublicLayout = ({ children }: any) => {
   return (
     <div>
       <LandingNavbar />

@@ -24,7 +24,7 @@ const LandingNavbar = () => {
       {!auth.status && <NavLink to={"/signup"}>Sign Up</NavLink>}
       <NavLink to={"/dashboard"}>Dashboard</NavLink>
       <NavLink to={"/account"}>Account</NavLink>
-      <button onClick={logout}>Sign Out</button>
+      {auth.status && <button onClick={logout}>Sign Out</button>}
     </div>
   );
 };
