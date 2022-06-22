@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "./editorTools";
 
-const EditorJs = ({ editorData, setEditorData }: any) => {
+const EditorComponent = ({ editorData, setEditorData }: any) => {
   const EDITTOR_HOLDER_ID = "editorjs";
   const ejInstance = useRef() as any;
   // const [editorData, setEditorData] = useState({}) as any;
@@ -45,4 +45,4 @@ const EditorJs = ({ editorData, setEditorData }: any) => {
   );
 };
 
-export default EditorJs;
+export default EditorComponent;

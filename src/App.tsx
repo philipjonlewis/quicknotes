@@ -1,72 +1,45 @@
-import React, { useEffect, useState } from "react";
-import EditorJs from "./components/Editor/EditorJs";
+import React, { useEffect, useState, useContext } from "react";
+import EditorComponent from "./components/editor/EditorComponent";
+
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import RequireAuth from "./auth/RequireAuth";
+import AccountAuth from "./auth/AccountAuth";
+
+import { Home, Dashboard, LogIn, SignUp, Account } from "./pages";
+
+import { LandingNavbar, ErrorPage } from "./components";
+import AuthContext from "./state/AuthContext";
+import { AuthStore } from "./state/AuthContext";
 
 const App = () => {
-  const [editorData, setEditorData] = useState({}) as any;
-  const [isLoading, setIsLoading] = useState(true) as any;
-  
+  const location = useLocation();
+
   return (
-    <div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setIsLoading(true);
-        }}
-      >
-        Reset
-      </button>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setIsLoading(true);
-
-          setEditorData((state) => {
-            return {
-              time: 1655824878455,
-              blocks: [
-                {
-                  type: "header",
-                  data: {
-                    text: "This is my awesome editor!",
-                    level: 1,
-                  },
-                },
-              ],
-            };
-          });
-          setIsLoading(false);
-        }}
-      >
-        Add First Data
-      </button>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setIsLoading(true);
-
-          setEditorData((state) => {
-            return {
-              time: 1655824878455,
-              blocks: [
-                {
-                  type: "header",
-                  data: {
-                    text: "hello!",
-                    level: 1,
-                  },
-                },
-              ],
-            };
-          });
-          setIsLoading(false);
-        }}
-      >
-        Add Second Data
-      </button>
-      {!isLoading && (
-        <EditorJs editorData={editorData} setEditorData={setEditorData} />
-      )}
-    </div>
+    <AuthContext>
+      <Routes location={location} key={location.key}>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <AccountAuth>
+              <Account />
+            </AccountAuth>
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </AuthContext>
   );
 };
 
