@@ -3,10 +3,9 @@ import EditorComponent from "./components/editor/EditorComponent";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 
-
 import { Home, Dashboard, LogIn, SignUp, Account } from "./pages";
 
-import { LandingNavbar, ErrorPage } from "./components";
+import { ErrorPage, RequireAuth } from "./components";
 import AuthContext from "./state/AuthContext";
 
 const App = () => {
@@ -18,8 +17,22 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/account" element={<Account />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <RequireAuth>
+              <Account />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </AuthContext>

@@ -13,7 +13,7 @@ import {
 const EditorComponent = ({ documentList }: any) => {
   const EDITTOR_HOLDER_ID = "editorjs";
   const ejInstance = useRef() as any;
-  const databaseCollectionRef = collection(firebaseDb, "documents");
+  const databaseCollectionRef = collection(firebaseDb, "editorJsDocs");
   const [editorData, setEditorData] = useState({}) as any;
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const EditorComponent = ({ documentList }: any) => {
   }, [documentList]);
 
   const updateData = async (id: any, content: any) => {
-    const documentDoc = doc(firebaseDb, "documents", id);
+    const documentDoc = doc(firebaseDb, "editorJsDocs", id);
 
     updateDoc(documentDoc, { blocks: content });
   };

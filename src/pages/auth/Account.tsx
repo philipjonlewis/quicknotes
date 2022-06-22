@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import PublicLayout from "../../components/layouts/PublicLayout";
 const Account = () => {
-  return (
-    <div>Account</div>
-  )
-}
+  return <PublicLayout>Account</PublicLayout>;
+};
 
-export default Account
+export default Account;

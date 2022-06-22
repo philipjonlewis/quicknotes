@@ -1,10 +1,18 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthStore } from "../../state/AuthContext";
-
+import { firebaseAuth } from "../../database/firebaseClient";
+import { signOut } from "firebase/auth";
+import { Navigate } from "react-router-dom";
 const LandingNavbar = () => {
-  const auth = useContext(AuthStore);
-  console.log(auth);
+  const auth = useContext(AuthStore) as any;
+
+  const logout = async (e) => {
+    e.preventDefault();
+    await signOut(firebaseAuth);
+    window.location.reload();
+    return <Navigate to="/" />;
+  };
 
   return (
     <div className="landing-navbar">
@@ -12,10 +20,11 @@ const LandingNavbar = () => {
         <p>youDoNotes</p>
       </div>
       <NavLink to={"/"}>Home</NavLink>
-      <NavLink to={"/login"}>Log In</NavLink>
-      <NavLink to={"/signup"}>Sign Up</NavLink>
+      {!auth.status && <NavLink to={"/login"}>Log In</NavLink>}
+      {!auth.status && <NavLink to={"/signup"}>Sign Up</NavLink>}
       <NavLink to={"/dashboard"}>Dashboard</NavLink>
       <NavLink to={"/account"}>Account</NavLink>
+      <button onClick={logout}>Sign Out</button>
     </div>
   );
 };
