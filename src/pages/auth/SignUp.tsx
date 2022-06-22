@@ -1,5 +1,5 @@
 import React from 'react'
-import PublicLayout from "../auth/PublicLayout";
+import PublicLayout from "../../components/layouts/PublicLayout";
 
 const SignUp = () => {
   return (

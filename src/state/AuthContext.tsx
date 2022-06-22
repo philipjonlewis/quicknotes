@@ -1,16 +1,17 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { supabase } from "../components/authentication/supabaseClient";
+import { firebaseDb } from "../database/firebaseClient";
 
 import React from "react";
 
-const isAuthenticated = supabase.auth.session();
-
-const AuthStore = createContext(isAuthenticated);
+const AuthStore = createContext("");
 
 const AuthContext = ({ children }: any) => {
-  return (
-    <AuthStore.Provider value={isAuthenticated}>{children}</AuthStore.Provider>
-  );
+
+
+
+
+  
+  return <>{children}</>;
 };
 
 export default AuthContext;

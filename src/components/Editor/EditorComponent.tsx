@@ -1,11 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "./editorTools";
+import { firebaseDb } from "../../database/firebaseClient";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 
-const EditorComponent = ({ editorData, setEditorData }: any) => {
+const EditorComponent = ({ documentList }: any) => {
   const EDITTOR_HOLDER_ID = "editorjs";
   const ejInstance = useRef() as any;
-  // const [editorData, setEditorData] = useState({}) as any;
+  const databaseCollectionRef = collection(firebaseDb, "documents");
+  const [editorData, setEditorData] = useState({}) as any;
 
   useEffect(() => {
     if (!ejInstance.current) {
@@ -16,22 +25,34 @@ const EditorComponent = ({ editorData, setEditorData }: any) => {
       ejInstance?.current?.destroy();
       ejInstance.current = null;
     };
-  }, [editorData]);
+  }, [documentList]);
 
-  const initEditor = () => {
+  const updateData = async (id: any, content: any) => {
+    const documentDoc = doc(firebaseDb, "documents", id);
+
+    updateDoc(documentDoc, { blocks: content });
+  };
+
+  // useEffect(() => {
+  //   updateData(editorData);
+  // }, [editorData]);
+
+  const initEditor = async () => {
     const editor = new EditorJS({
       holder: EDITTOR_HOLDER_ID,
       //   logLevel: "ERROR",
-      data: editorData,
+      data: await documentList,
       onReady: () => {
         ejInstance.current = editor;
       },
       onChange: async (api, event) => {
         // console.log(this);
         let content = await editor.save();
+        // console.log(documentList);
         console.log(content);
+        await updateData(await documentList.id, await content.blocks);
         // Put your logic here to save this data to your DB
-        // setEditorData((state: any) => ({ ...state, content: content }));
+        setEditorData((state: any) => ({ ...state, content: content }));
       },
       autofocus: true,
       tools: EDITOR_JS_TOOLS,
