@@ -16,15 +16,23 @@ const LandingNavbar = () => {
 
   return (
     <div className="landing-navbar">
-      <div className="logo-container">
-        <p>youDoNotes</p>
+      <NavLink to={"/"} className="logo-container">
+        <p>QuickNotes</p>
+      </NavLink>
+      <div className="link-container">
+        {!auth.status && (
+          <NavLink className="login-link" to={"/login"}>
+            Log In
+          </NavLink>
+        )}
+        {!auth.status && (
+          <NavLink className="signup-link" to={"/signup"}>
+            Sign Up
+          </NavLink>
+        )}
+        {auth.status && <NavLink to={"/dashboard"}>Dashboard</NavLink>}
+        {auth.status && <div onClick={logout}>Sign Out</div>}
       </div>
-      <NavLink to={"/"}>Home</NavLink>
-      {!auth.status && <NavLink to={"/login"}>Log In</NavLink>}
-      {!auth.status && <NavLink to={"/signup"}>Sign Up</NavLink>}
-      <NavLink to={"/dashboard"}>Dashboard</NavLink>
-      <NavLink to={"/account"}>Account</NavLink>
-      {auth.status && <button onClick={logout}>Sign Out</button>}
     </div>
   );
 };

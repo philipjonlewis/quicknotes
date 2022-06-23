@@ -12,6 +12,8 @@ import {
 import { firebaseDb } from "../../database/firebaseClient";
 import { deleteDoc } from "firebase/firestore";
 import { TrashIcon } from "@heroicons/react/outline";
+import sanitizeHtml from "sanitize-html";
+
 const DocumentList = ({ documentList, setActiveDocument, activeDocument }) => {
   const auth = useContext(AuthStore) as any;
   // const [documentList, setDocumentList] = useState([]) as any;
@@ -50,6 +52,17 @@ const DocumentList = ({ documentList, setActiveDocument, activeDocument }) => {
     }
   };
 
+  const titleCleaner = (dirty) => {
+    const clean = sanitizeHtml(dirty, {
+      allowedTags: [],
+      allowedAttributes: {
+        // a: ["href"],
+      },
+      allowedIframeHostnames: [],
+    }).replace(/[^a-zA-Z0-9]/g, " ");
+    return clean;
+  };
+
   return (
     <>
       {documentList.length >= 1 &&
@@ -68,7 +81,8 @@ const DocumentList = ({ documentList, setActiveDocument, activeDocument }) => {
               >
                 <p>
                   {" "}
-                  {doc.blocks[0]?.data.text.slice(0, 20)}<span>...</span>
+                  {titleCleaner(doc.blocks[0]?.data.text.slice(0, 20))}
+                  <span>...</span>
                 </p>
               </div>
               <div

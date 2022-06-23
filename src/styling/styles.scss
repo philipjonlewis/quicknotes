@@ -18,61 +18,20 @@ body {
 .editor-container {
 }
 
-// .editor {
-//   // border-radius: 1rem;
-//   margin: 1rem auto;
-//   // background-color: white;
-//   width: 900px;
-//   padding: 3rem 6rem;
+.editor {
+  // border-radius: 1rem;
+  margin: 1rem auto;
+  // background-color: white;
+  width: 900px;
+  padding: 3rem 6rem;
 
-//   height: 600px;
+  height: 600px;
 
-//   overflow-y: scroll;
+  overflow-y: scroll;
 
-//   // letter-spacing: .5px
+  // letter-spacing: .5px
 
-//   h1.ce-header {
-//     color: rgb(41, 41, 41);
-//   }
-// }
-
-.landing-navbar {
-  width: 100vw;
-  height: 6rem;
-  background-color: rgb(210, 210, 210);
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
-  .logo-container {
-    margin-right: 2rem;
-
-    p {
-      font-family: "Quicksand";
-      font-weight: 700;
-      font-size: 1.2rem;
-      // color: red;
-    }
-  }
-
-  a {
-    text-decoration: inherit;
-    color: rgb(68, 68, 68);
-    font-style: none;
-    margin-left: 1rem;
+  h1.ce-header {
+    color: rgb(41, 41, 41);
   }
 }
-
-// .dashboard {
-//   // background-color: red;
-//   height: 100vh;
-//   display: flex;
-
-//   &-navbar {
-//     height: 100%;
-//     width: 20rem;
-//     background-color: yellow;
-//   }
-// }

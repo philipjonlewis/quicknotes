@@ -7,17 +7,18 @@ const LandingTypeEffect = () => {
   const divRef = useRef();
   return (
     <TypeWriterEffect
-      textStyle={{
-        fontFamily: "Quicksand",
-        color: "#3F3D56",
-        fontWeight: 500,
-        fontSize: "1.5em",
-      }}
-      startDelay={0}
+      // textStyle={{
+      //   fontFamily: "Quicksand",
+      //   color: "#3F3D56",
+      //   fontWeight: 500,
+      //   fontSize: "1.5em",
+      // }}
+
+      // startDelay={500}
       cursorColor="#3F3D56"
-      multiText={["nonesense", "distraction", "something else"]}
-      multiTextDelay={1000}
-      typeSpeed={200}
+      multiText={["distraction", "hassle"]}
+      multiTextDelay={1500}
+      typeSpeed={400}
       multiTextLoop={true}
     />
   );

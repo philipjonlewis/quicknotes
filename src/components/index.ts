@@ -5,7 +5,7 @@ import RequireAuth from "./auth/RequireAuth";
 import LandingTypeEffect from "./effects/LandingTypeEffect";
 import DocumentList from "./editor/DocumentList";
 import EditorComponent from "./editor/EditorComponent";
-
+import DisplayEditor from "./editor/DisplayEditor";
 export {
   LandingNavbar,
   DashboardNavbar,
@@ -14,4 +14,5 @@ export {
   LandingTypeEffect,
   DocumentList,
   EditorComponent,
+  DisplayEditor,
 };

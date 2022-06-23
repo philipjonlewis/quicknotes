@@ -15,7 +15,7 @@ export const EDITOR_JS_TOOLS = {
   // NOTE: Paragraph is default tool. Declare only when you want to change paragraph option.
   // paragraph: Paragraph,
   embed: Embed,
-  table: Table,
+  // table: Table,
   list: List,
   code: Code,
   header: Header,
