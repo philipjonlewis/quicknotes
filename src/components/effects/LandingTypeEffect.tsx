@@ -16,9 +16,9 @@ const LandingTypeEffect = () => {
 
       // startDelay={500}
       cursorColor="#3F3D56"
-      multiText={["distraction", "hassle"]}
-      multiTextDelay={1500}
-      typeSpeed={400}
+      multiText={["Zero Distractions", "Hassle-free"]}
+      multiTextDelay={100}
+      typeSpeed={200}
       multiTextLoop={true}
     />
   );
