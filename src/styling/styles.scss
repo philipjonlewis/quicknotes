@@ -1,4 +1,5 @@
-@use "./supabaseStyling" as *;
+@use "./base/" as *;
+@use "./pages/" as *;
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 *,
@@ -10,30 +11,30 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(241, 241, 241);
   color: #3a3a3a;
 }
 
 .editor-container {
 }
 
-.editor {
-  // border-radius: 1rem;
-  margin: 1rem auto;
-  // background-color: white;
-  width: 900px;
-  padding: 3rem 6rem;
+// .editor {
+//   // border-radius: 1rem;
+//   margin: 1rem auto;
+//   // background-color: white;
+//   width: 900px;
+//   padding: 3rem 6rem;
 
-  height: 600px;
+//   height: 600px;
 
-  overflow-y: scroll;
+//   overflow-y: scroll;
 
-  // letter-spacing: .5px
+//   // letter-spacing: .5px
 
-  h1.ce-header {
-    color: rgb(41, 41, 41);
-  }
-}
+//   h1.ce-header {
+//     color: rgb(41, 41, 41);
+//   }
+// }
 
 .landing-navbar {
   width: 100vw;
@@ -64,14 +65,14 @@ body {
   }
 }
 
-.dashboard {
-  // background-color: red;
-  height: 100vh;
-  display: flex;
+// .dashboard {
+//   // background-color: red;
+//   height: 100vh;
+//   display: flex;
 
-  &-navbar {
-    height: 100%;
-    width: 16rem;
-    // background-color: yellow;
-  }
-}
+//   &-navbar {
+//     height: 100%;
+//     width: 20rem;
+//     background-color: yellow;
+//   }
+// }

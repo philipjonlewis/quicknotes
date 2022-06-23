@@ -19,6 +19,10 @@ const AuthContext = ({ children }: any) => {
         setAuthUid((state: any) => {
           return { status: true, uid: currentUser.uid };
         });
+      } else {
+        setAuthUid((state: any) => {
+          return { status: false, uid: "" };
+        });
       }
     });
   }, [firebaseAuth]);

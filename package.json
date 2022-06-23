@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.24.3",
+    "@heroicons/react": "^1.0.6",
     "firebase": "^9.8.3",
     "framer-motion": "^6.3.12",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-typewriter-effect": "^1.1.0"
+    "react-typewriter-effect": "^1.1.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@editorjs/checklist": "^1.3.0",
@@ -25,8 +28,10 @@
     "@editorjs/list": "^1.7.0",
     "@editorjs/marker": "^1.2.2",
     "@editorjs/table": "^2.0.2",
+    "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/uuid": "^8.3.4",
     "@vitejs/plugin-react": "^1.3.0",
     "sass": "^1.52.3",
     "typescript": "^4.6.3",

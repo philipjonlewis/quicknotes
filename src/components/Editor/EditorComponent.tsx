@@ -10,7 +10,7 @@ import {
   doc,
 } from "firebase/firestore";
 
-const EditorComponent = ({ documentList }: any) => {
+const EditorComponent = ({ document }: any) => {
   const EDITTOR_HOLDER_ID = "editorjs";
   const ejInstance = useRef() as any;
   const databaseCollectionRef = collection(firebaseDb, "editorJsDocs");
@@ -25,7 +25,7 @@ const EditorComponent = ({ documentList }: any) => {
       ejInstance?.current?.destroy();
       ejInstance.current = null;
     };
-  }, [documentList]);
+  }, [document]);
 
   const updateData = async (id: any, content: any) => {
     const documentDoc = doc(firebaseDb, "editorJsDocs", id);
@@ -41,16 +41,16 @@ const EditorComponent = ({ documentList }: any) => {
     const editor = new EditorJS({
       holder: EDITTOR_HOLDER_ID,
       //   logLevel: "ERROR",
-      data: await documentList,
+      data: await document,
       onReady: () => {
         ejInstance.current = editor;
       },
       onChange: async (api, event) => {
         // console.log(this);
         let content = await editor.save();
-        // console.log(documentList);
+        // console.log(document);
         console.log(content);
-        await updateData(await documentList.id, await content.blocks);
+        await updateData(await document.id, await content.blocks);
         // Put your logic here to save this data to your DB
         setEditorData((state: any) => ({ ...state, content: content }));
       },
