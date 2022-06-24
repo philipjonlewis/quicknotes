@@ -56,7 +56,7 @@ const DocumentList = ({
     }
   };
 
-  const titleCleaner = (dirty) => {
+  const titleCleaner = (dirty: any) => {
     const clean = sanitizeHtml(dirty, {
       allowedTags: [],
       allowedAttributes: {

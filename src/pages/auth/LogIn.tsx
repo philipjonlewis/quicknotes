@@ -23,7 +23,7 @@ const LogIn = () => {
   //   });
   // }, []);
 
-  const logInHandler = async (e) => {
+  const logInHandler = async (e: any) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(firebaseAuth, loginEmail, loginPassword);
