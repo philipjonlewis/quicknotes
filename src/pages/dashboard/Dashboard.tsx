@@ -24,7 +24,6 @@ import { AuthStore } from "../../state/AuthContext";
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
 
-import { DashboardNavbar } from "../../components";
 import DocumentList from "../../components/editor/DocumentList";
 
 const Dashboard = () => {
