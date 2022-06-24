@@ -49,32 +49,11 @@ const DisplayEditor = ({}: any) => {
     };
   }, [document]);
 
-  const updateData = async (id: any, content: any) => {
-    const documentDoc = doc(firebaseDb, "editorJsDocs", id);
-
-    updateDoc(documentDoc, { blocks: content });
-  };
-
-  // useEffect(() => {
-  //   updateData(editorData);
-  // }, [editorData]);
-
   const initEditor = async () => {
     const editor = new EditorJS({
-      // autofocus: true,
-
       holder: EDITTOR_HOLDER_ID,
-      //   logLevel: "ERROR",
-      data: sampleComponent,
       onReady: () => {
         ejInstance.current = editor;
-      },
-      onChange: async (api, event) => {
-        // console.log(this);
-        // let content = await editor.save();
-        // await updateData(await document.id, await content.blocks);
-        // // Put your logic here to save this data to your DB
-        // setEditorData((state: any) => ({ ...state, content: content }));
       },
       autofocus: true,
       tools: EDITOR_JS_TOOLS,
