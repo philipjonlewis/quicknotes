@@ -24,7 +24,7 @@ import { AuthStore } from "../../state/AuthContext";
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
 
-import DocumentList from "../../components/editor/DocumentList";
+// import DocumentList from "../../components/editor/DocumentList";
 
 const Dashboard = () => {
   const auth = useContext(AuthStore) as any;
@@ -112,19 +112,19 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="list-proper">
-              {documentList.length >= 1 && (
+              {/* {documentList.length >= 1 && (
                 <DocumentList
                   documentList={documentList}
                   setActiveDocument={setActiveDocument}
                   activeDocument={activeDocument}
                 />
-              )}
+              )} */}
             </div>
           </div>
           <div className="editor-container">
-            {!_.isEmpty(activeDocument) && (
+            {/* {!_.isEmpty(activeDocument) && (
               <EditorComponent document={activeDocument} />
-            )}
+            )} */}
             {/* <p>text editor here</p> */}
           </div>
         </div>
