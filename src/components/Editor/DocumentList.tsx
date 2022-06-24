@@ -14,7 +14,11 @@ import { deleteDoc } from "firebase/firestore";
 import { TrashIcon } from "@heroicons/react/outline";
 import sanitizeHtml from "sanitize-html";
 
-const DocumentList = ({ documentList, setActiveDocument, activeDocument }) => {
+const DocumentList = ({
+  documentList,
+  setActiveDocument,
+  activeDocument,
+}: any) => {
   const auth = useContext(AuthStore) as any;
   // const [documentList, setDocumentList] = useState([]) as any;
 
