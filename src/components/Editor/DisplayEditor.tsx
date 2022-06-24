@@ -61,7 +61,7 @@ const DisplayEditor = ({}: any) => {
 
   const initEditor = async () => {
     const editor = new EditorJS({
-      autofocus: true,
+      // autofocus: true,
 
       holder: EDITTOR_HOLDER_ID,
       //   logLevel: "ERROR",

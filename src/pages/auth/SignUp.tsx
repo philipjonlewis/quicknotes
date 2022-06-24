@@ -5,8 +5,10 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [user, setUser] = useState({}) as any;
@@ -17,14 +19,15 @@ const SignUp = () => {
     });
   }, []);
 
-  const register = async () => {
+  const register = async (e) => {
+    e.preventDefault();
     try {
       const userCred = await createUserWithEmailAndPassword(
         firebaseAuth,
         registerEmail,
         registerPassword
       );
-
+      navigate("/dashboard");
       console.log(userCred);
     } catch (error) {
       console.log(error);
@@ -36,25 +39,34 @@ const SignUp = () => {
 
   return (
     <PublicLayout>
-      {" "}
-      <div>
-        <h3> Register User </h3>
-        <input
-          value={registerEmail}
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          }}
-        />
-        <input
-          value={registerPassword}
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          }}
-        />
-        {user?.email}
-        <button onClick={register}>Sign Up</button>
+      <div className="signup-form-container">
+        <form onSubmit={register}>
+          <p>Sign Up</p>
+          <div className="form-container">
+            <label htmlFor="email">Email</label>
+            <input
+              value={registerEmail}
+              id="email"
+              type="email"
+              placeholder="name@email.com"
+              onChange={(e) => {
+                setRegisterEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-container">
+            <label htmlFor="password">Password</label>
+            <input
+              value={registerPassword}
+              id="password"
+              type="password"
+              onChange={(e) => {
+                setRegisterPassword(e.target.value);
+              }}
+            />
+          </div>
+          <button className="submit-button">Sign Up</button>
+        </form>
       </div>
     </PublicLayout>
   );

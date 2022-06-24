@@ -23,7 +23,8 @@ const LogIn = () => {
   //   });
   // }, []);
 
-  const login = async () => {
+  const logInHandler = async (e) => {
+    e.preventDefault();
     try {
       await signInWithEmailAndPassword(firebaseAuth, loginEmail, loginPassword);
 
@@ -36,33 +37,36 @@ const LogIn = () => {
     }
   };
 
-  const logout = async () => {
-    await signOut(firebaseAuth);
-  };
-
   return (
     <PublicLayout>
-      <div>
-        {" "}
-        <div>
-          <h3> Login </h3>
-          <input
-            placeholder="Email..."
-            onChange={(event) => {
-              setLoginEmail(event.target.value);
-            }}
-          />
-          <input
-            placeholder="Password..."
-            onChange={(event) => {
-              setLoginPassword(event.target.value);
-            }}
-          />
-
-          <button onClick={login}> Login</button>
-        </div>
-        <h4> User Logged In: </h4>
-        <button onClick={logout}> Sign Out </button>
+      <div className="login-form-container">
+        <form onSubmit={logInHandler}>
+          <p>Log In</p>
+          <div className="form-container">
+            <label htmlFor="email">Email</label>
+            <input
+              value={loginEmail}
+              id="email"
+              type="email"
+              placeholder="name@email.com"
+              onChange={(e) => {
+                setLoginEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-container">
+            <label htmlFor="password">Password</label>
+            <input
+              value={loginPassword}
+              id="password"
+              type="password"
+              onChange={(e) => {
+                setLoginPassword(e.target.value);
+              }}
+            />
+          </div>
+          <button className="submit-button">Log In</button>
+        </form>
       </div>
     </PublicLayout>
   );
