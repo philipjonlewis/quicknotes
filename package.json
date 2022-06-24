@@ -1,5 +1,8 @@
 {
   "name": "quicknotes",
+  "engines": {
+    "node": "17.x"
+  },
   "private": true,
   "version": "0.0.0",
   "scripts": {
