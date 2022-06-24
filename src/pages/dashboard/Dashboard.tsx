@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import EditorComponent from "../../components/editor/EditorComponent";
-import { DashboardNavbar, DocumentList } from "../../components";
+import { DashboardNavbar } from "../../components";
 import { firebaseDb } from "../../database/firebaseClient";
 import {
   collection,
@@ -23,6 +23,7 @@ import { Link } from "react-router-dom";
 import { AuthStore } from "../../state/AuthContext";
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
+import DocumentList from "../../components/editor/DocumentList";
 
 const Dashboard = () => {
   const auth = useContext(AuthStore) as any;
