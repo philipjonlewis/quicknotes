@@ -3,9 +3,7 @@ import { LandingTypeEffect } from "../../components";
 // import DisplayEditor from "../../components/editor/DisplayEditor";
 import { motion } from "framer-motion";
 
-
 export const Home = () => {
-
   return (
     <PublicLayout>
       <div className="home-page">
@@ -57,7 +55,7 @@ export const Home = () => {
           }}
           className="hero-sample"
         >
-          {/* <DisplayEditor /> */}
+          <DisplayEditor />
         </motion.div>
       </div>
     </PublicLayout>
