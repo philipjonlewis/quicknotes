@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import PublicLayout from "../../components/layouts/PublicLayout";
 import { AuthStore } from "../../state/AuthContext";
 import { LandingTypeEffect } from "../../components";
-import { DisplayEditor } from "../../components";
+// import { DisplayEditor } from "../../components";
+import DisplayEditor from "../../components/editor/DisplayEditor";
 import { motion } from "framer-motion";
 export const Home = () => {
   const auth = useContext(AuthStore);
