@@ -1,14 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthStore } from "../../state/AuthContext";
-import {
-  collection,
-  getDocs,
-  addDoc,
-  query,
-  where,
-  onSnapshot,
-  doc,
-} from "firebase/firestore";
+import { doc } from "firebase/firestore";
 import { firebaseDb } from "../../database/firebaseClient";
 import { deleteDoc } from "firebase/firestore";
 import { TrashIcon } from "@heroicons/react/outline";
@@ -20,26 +12,6 @@ const DocumentList = ({
   activeDocument,
 }: any) => {
   const auth = useContext(AuthStore) as any;
-  // const [documentList, setDocumentList] = useState([]) as any;
-
-  // const databaseCollectionRef = collection(firebaseDb, "editorJsDocs");
-
-  // useEffect(() => {
-  //   const getDocuments = async () => {
-  //     const dbQuery = query(
-  //       databaseCollectionRef,
-  //       where("userId", "==", auth.uid)
-  //     );
-
-  //     const unsubscribe = onSnapshot(dbQuery, (querySnapshot) => {
-  //       setDocumentList(
-  //         querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-  //       );
-  //     });
-  //   };
-
-  //   getDocuments();
-  // }, []);
 
   if (!auth.status) {
     return <div> Log In</div>;
