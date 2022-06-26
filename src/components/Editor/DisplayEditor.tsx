@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "./editorTools";
 
-const DisplayEditor = ({}: any) => {
+const DisplayEditor = () => {
   const EDITTOR_HOLDER_ID = "displayEditorJs";
   const ejInstance = useRef() as any;
 
@@ -15,7 +15,7 @@ const DisplayEditor = ({}: any) => {
       ejInstance?.current?.destroy();
       ejInstance.current = null;
     };
-  }, [document]);
+  }, []);
 
   const initEditor = async () => {
     const editor = new EditorJS({
@@ -48,11 +48,7 @@ const DisplayEditor = ({}: any) => {
     });
   };
 
-  return (
-    <div className="display-editor">
-      <div id={EDITTOR_HOLDER_ID}></div>
-    </div>
-  );
+  return <div id={EDITTOR_HOLDER_ID}></div>;
 };
 
 export default DisplayEditor;

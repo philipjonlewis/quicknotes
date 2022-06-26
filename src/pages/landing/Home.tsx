@@ -55,7 +55,9 @@ const Home = () => {
           }}
           className="hero-sample"
         >
-          <DisplayEditor />
+          <div className="display-editor">
+            <DisplayEditor />
+          </div>
         </motion.div>
       </div>
     </PublicLayout>

@@ -1,4 +1,4 @@
-import { Home } from "./landing/Home";
+import Home from "./landing/Home";
 import Dashboard from "./dashboard/Dashboard";
 import LogIn from "./auth/LogIn";
 import SignUp from "./auth/SignUp";
