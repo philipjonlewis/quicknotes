@@ -1,6 +1,6 @@
 import PublicLayout from "../../components/layouts/PublicLayout";
-import { LandingTypeEffect } from "../../components";
-// import DisplayEditor from "../../components/editor/DisplayEditor";
+import { LandingTypeEffect, DisplayEditor } from "../../components";
+
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -41,10 +41,6 @@ const Home = () => {
           >
             <p>Minimalist block-style text editor</p>
           </motion.div>
-
-          {/* <div className="type-effect">
-            <LandingTypeEffect />
-          </div> */}
         </div>
         <motion.div
           initial="hidden"
@@ -55,7 +51,9 @@ const Home = () => {
           }}
           className="hero-sample"
         >
-          <div className="display-editor">{/* <DisplayEditor /> */}</div>
+          <div className="display-editor">
+            <DisplayEditor />
+          </div>
         </motion.div>
       </div>
     </PublicLayout>

@@ -11,8 +11,7 @@ import {
   Unsubscribe,
   orderBy,
 } from "firebase/firestore";
-import { onAuthStateChanged } from "firebase/auth";
-import { firebaseAuth } from "../../database/firebaseClient";
+
 import {
   ChevronLeftIcon,
   CogIcon,
