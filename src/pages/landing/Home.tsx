@@ -1,6 +1,6 @@
 import PublicLayout from "../../components/layouts/PublicLayout";
 import { LandingTypeEffect } from "../../components";
-import DisplayEditor from "../../components/editor/DisplayEditor";
+// import DisplayEditor from "../../components/editor/DisplayEditor";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -55,9 +55,7 @@ const Home = () => {
           }}
           className="hero-sample"
         >
-          <div className="display-editor">
-            <DisplayEditor />
-          </div>
+          <div className="display-editor">{/* <DisplayEditor /> */}</div>
         </motion.div>
       </div>
     </PublicLayout>
