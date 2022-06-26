@@ -1,5 +1,5 @@
 import PublicLayout from "../../components/layouts/PublicLayout";
-import {  DisplayEditor } from "../../components";
+import { DisplayEditor } from "../../components";
 
 import { motion } from "framer-motion";
 
@@ -26,17 +26,6 @@ const Home = () => {
               hidden: { opacity: 0, y: 100 },
               visible: { opacity: 1, y: 0, transition: { delay: 1 } },
             }}
-            className="typewriter"
-          >
-       
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, y: 100 },
-              visible: { opacity: 1, y: 0, transition: { delay: 1.5 } },
-            }}
             className="subtitle"
           >
             <p>Minimalist block-style text editor</p>
@@ -47,7 +36,7 @@ const Home = () => {
           animate="visible"
           variants={{
             hidden: { opacity: 0, y: 100 },
-            visible: { opacity: 1, y: 0, transition: { delay: 2 } },
+            visible: { opacity: 1, y: 0, transition: { delay: 1.5 } },
           }}
           className="hero-sample"
         >

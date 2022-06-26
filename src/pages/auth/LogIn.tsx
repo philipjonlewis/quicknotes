@@ -14,59 +14,87 @@ const LogIn = () => {
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  // const [user, setUser] = useState({}) as any;
-
-  // useEffect(() => {
-  //   onAuthStateChanged(firebaseAuth, (currentUser: any) => {
-  //     console.log("hi", currentUser);
-  //     setUser(currentUser);
-  //   });
-  // }, []);
+  const [isLoginClicked, setIsLoginClicked] = useState(false);
 
   const logInHandler = async (e: any) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(firebaseAuth, loginEmail, loginPassword);
+      setIsLoginClicked(true);
+      const logInData = await signInWithEmailAndPassword(
+        firebaseAuth,
+        loginEmail,
+        loginPassword
+      );
 
-      navigate("/dashboard");
-
-      setLoginEmail("");
-      setLoginPassword("");
+      if (logInData) {
+        setTimeout(() => {
+          setLoginEmail("");
+          setLoginPassword("");
+          navigate("/dashboard");
+        }, 3000);
+      }
     } catch (error) {
+      setIsLoginClicked(false);
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    setIsLoginClicked(false);
+  }, []);
+
   return (
     <PublicLayout>
       <div className="login-form-container">
-        <form onSubmit={logInHandler}>
-          <p>Log In</p>
-          <div className="form-container">
-            <label htmlFor="email">Email</label>
-            <input
-              value={loginEmail}
-              id="email"
-              type="email"
-              placeholder="name@email.com"
-              onChange={(e) => {
-                setLoginEmail(e.target.value);
-              }}
-            />
+        {!isLoginClicked ? (
+          <form onSubmit={logInHandler}>
+            <p>Log In</p>
+            <div className="form-container">
+              <label htmlFor="email">Email</label>
+              <input
+                value={loginEmail}
+                id="email"
+                type="email"
+                placeholder="name@email.com"
+                onChange={(e) => {
+                  setLoginEmail(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-container">
+              <label htmlFor="password">Password</label>
+              <input
+                value={loginPassword}
+                id="password"
+                type="password"
+                onChange={(e) => {
+                  setLoginPassword(e.target.value);
+                }}
+              />
+            </div>
+            <button disabled={isLoginClicked} className="submit-button">
+              Log In
+            </button>
+          </form>
+        ) : (
+          <div className="loading-container">
+            <div className="lds-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <p>Loggin In</p>
           </div>
-          <div className="form-container">
-            <label htmlFor="password">Password</label>
-            <input
-              value={loginPassword}
-              id="password"
-              type="password"
-              onChange={(e) => {
-                setLoginPassword(e.target.value);
-              }}
-            />
-          </div>
-          <button className="submit-button">Log In</button>
-        </form>
+        )}
       </div>
     </PublicLayout>
   );

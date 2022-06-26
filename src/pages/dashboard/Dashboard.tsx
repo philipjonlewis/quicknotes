@@ -110,12 +110,17 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="list-proper">
-              {documentList.length >= 1 && (
+              {documentList.length >= 1 ? (
                 <DocumentList
                   documentList={documentList}
                   setActiveDocument={setActiveDocument}
                   activeDocument={activeDocument}
                 />
+              ) : (
+                <div className="empty-list">
+                  <p>Empty Document List</p>
+                  <p>Add a new document</p>
+                </div>
               )}
             </div>
           </div>
