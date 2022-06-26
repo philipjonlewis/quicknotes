@@ -1,5 +1,5 @@
 import PublicLayout from "../../components/layouts/PublicLayout";
-import { LandingTypeEffect, DisplayEditor } from "../../components";
+import {  DisplayEditor } from "../../components";
 
 import { motion } from "framer-motion";
 
@@ -28,7 +28,7 @@ const Home = () => {
             }}
             className="typewriter"
           >
-            <LandingTypeEffect />
+       
           </motion.div>
           <motion.div
             initial="hidden"
