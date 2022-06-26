@@ -97,9 +97,9 @@ const Dashboard = () => {
           <Link to={"/"}>
             <ChevronLeftIcon height={24} strokeWidth={2} />
           </Link>
-          <Link to={"/account"}>
+          {/* <Link to={"/account"}>
             <CogIcon height={24} strokeWidth={2} />
-          </Link>
+          </Link> */}
         </div>
         <div className="workspace-container">
           <div className="list-container">

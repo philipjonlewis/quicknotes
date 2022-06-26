@@ -13,6 +13,63 @@
     height: 100%;
     @media only screen and (max-width: 640px) {
       max-width: 640px;
+      width: 100%;
+
+      .landing-navbar {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        // background-color: red;
+        // border-bottom: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        .logo-container {
+          margin-bottom: 1rem;
+        }
+
+        .link-container {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          .link-btn {
+            padding: 0.8rem 2rem;
+            background-color: rgb(234, 241, 243);
+            color: rgb(69, 110, 123);
+          }
+        }
+      }
+
+      .hero-text {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .logo {
+          font-size: 0.9rem;
+          visibility: hidden;
+        }
+      }
+
+      .hero-sample {
+        width: 100%;
+
+        .display-editor {
+          margin: auto;
+          padding: 1rem;
+          background-color: white;
+          border-radius: 8px;
+          // background-color: red;
+          width: 90%;
+
+          -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+          -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+        }
+      }
     }
 
     @media only screen and (min-width: 640px) {
@@ -45,6 +102,11 @@
           div {
             display: inline-block;
             cursor: pointer;
+          }
+
+          .link-btn {
+            background-color: rgb(234, 241, 243);
+            color: rgb(69, 110, 123);
           }
 
           .login-link {

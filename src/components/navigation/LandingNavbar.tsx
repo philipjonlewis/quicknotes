@@ -28,19 +28,28 @@ const LandingNavbar = () => {
       <NavLink to={"/"} className="logo-container">
         <p className="logo">QuickNotes</p>
       </NavLink>
+
       <div className="link-container">
         {!auth.status && (
-          <NavLink className="login-link" to={"/login"}>
+          <NavLink className="login-link link-btn" to={"/login"}>
             Log In
           </NavLink>
         )}
         {!auth.status && (
-          <NavLink className="signup-link" to={"/signup"}>
+          <NavLink className="signup-link link-btn" to={"/signup"}>
             Sign Up
           </NavLink>
         )}
-        {auth.status && <NavLink to={"/dashboard"}>Dashboard</NavLink>}
-        {auth.status && <div onClick={logout}>Sign Out</div>}
+        {auth.status && (
+          <NavLink className="link-btn" to={"/dashboard"}>
+            Dashboard
+          </NavLink>
+        )}
+        {auth.status && (
+          <div className="link-btn" onClick={logout}>
+            Sign Out
+          </div>
+        )}
       </div>
     </motion.div>
   );

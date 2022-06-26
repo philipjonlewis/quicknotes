@@ -28,7 +28,7 @@ const DisplayEditor = () => {
             type: "header",
             data: {
               text: "Your New Document!",
-              level: 1,
+              level: 3,
             },
           },
           {
