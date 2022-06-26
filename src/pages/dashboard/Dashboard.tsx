@@ -125,8 +125,12 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="editor-container">
-            {!_.isEmpty(activeDocument) && (
+            {!_.isEmpty(activeDocument) ? (
               <EditorComponent document={activeDocument} />
+            ) : (
+              <div className="no-active">
+                <p>No Active Document</p>
+              </div>
             )}
           </div>
         </div>

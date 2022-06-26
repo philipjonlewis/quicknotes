@@ -101,6 +101,7 @@
           align-items: center;
 
           .editor {
+            background-color: white;
             width: 100%;
           }
         }
@@ -119,8 +120,7 @@
       .dashboard-navbar {
         width: 100%;
         height: 4rem;
-        // background-color: red;
-        // border: 1px solid;
+
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -141,22 +141,13 @@
 
         .list-container {
           padding: 0 1rem;
-          // position: absolute;
           width: 30%;
-          //   border-right: 1px solid;
           height: 100%;
-          // background-color: blue;
           .add-doc-container {
-            // background-color: red;
             height: 4rem;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-
-            // padding: 1rem;
-            // svg {
-            //   margin: auto;
-            // }
 
             .add-btn-container {
               display: flex;
@@ -166,7 +157,6 @@
               width: 3rem;
               cursor: pointer;
               color: lightslategray;
-              //   background-color: blue;
             }
           }
 
@@ -199,10 +189,8 @@
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
-                // background-color: yellow;
                 width: 2rem;
                 color: lightcoral;
-                // visibility: hidden;
 
                 opacity: 50%;
 
@@ -219,7 +207,6 @@
               padding: 0.5rem 1rem;
 
               p:nth-of-type(1) {
-                font-weight: bold;
                 border-radius: 0.5rem;
                 font-size: 1rem;
               }
@@ -233,18 +220,31 @@
         }
 
         .editor-container {
-          padding: 1rem;
           width: 70%;
           height: 100%;
           overflow-y: scroll;
-          // background-color: red;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           align-items: center;
 
           .editor {
+            border-radius: 8px 8px 0 0;
+            background-color: white;
+            height: 100%;
             width: 100%;
+          }
+
+          .no-active {
+            background-color: #ffe3d9;
+            color: #a97866;
+            width: fit-content;
+            padding: 0.5rem 1rem;
+
+            p:nth-of-type(1) {
+              border-radius: 0.5rem;
+              font-size: 1rem;
+            }
           }
         }
       }
