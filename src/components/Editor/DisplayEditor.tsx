@@ -1,17 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "./editorTools";
-import { firebaseDb } from "../../database/firebaseClient";
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
 
 const DisplayEditor = ({}: any) => {
-  const EDITTOR_HOLDER_ID = "editorjs";
+  const EDITTOR_HOLDER_ID = "displayEditorJs";
   const ejInstance = useRef() as any;
 
   useEffect(() => {
