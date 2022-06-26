@@ -33,12 +33,6 @@
           width: 100%;
           display: flex;
           justify-content: space-between;
-
-          .link-btn {
-            padding: 0.8rem 2rem;
-            background-color: rgb(234, 241, 243);
-            color: rgb(69, 110, 123);
-          }
         }
       }
 
@@ -96,26 +90,11 @@
             font-size: 0.9rem;
             border-radius: 4px;
             // background-color: blue;
-            padding: 0.8rem 2rem;
           }
 
           div {
             display: inline-block;
             cursor: pointer;
-          }
-
-          .link-btn {
-            background-color: rgb(234, 241, 243);
-            color: rgb(69, 110, 123);
-          }
-
-          .login-link {
-            // background-color: rgb(233, 233, 233);
-            // color: lightcoral;
-            // transition: all 0.5s ease-out;
-            // &:hover {
-            //   background-color: lightsalmon;
-            // }
           }
         }
       }
@@ -206,4 +185,14 @@
       min-width: 1536px;
     }
   }
+}
+
+.link-btn {
+  border-radius: 8px;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(207, 236, 246);
+  color: rgb(59, 92, 103);
 }
