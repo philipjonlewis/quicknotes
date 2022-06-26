@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import EditorComponent from "../../components/editor/EditorComponent";
-// import { DashboardNavbar, DocumentList } from "../../components";
 import { firebaseDb } from "../../database/firebaseClient";
 import {
   collection,
