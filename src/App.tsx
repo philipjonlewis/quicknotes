@@ -1,6 +1,3 @@
-import React, { useEffect, useState, useContext } from "react";
-import EditorComponent from "./components/editor/EditorComponent";
-
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import { Home, Dashboard, LogIn, SignUp, Account } from "./pages";

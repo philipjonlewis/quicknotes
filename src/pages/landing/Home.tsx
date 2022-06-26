@@ -3,7 +3,7 @@ import { LandingTypeEffect } from "../../components";
 import DisplayEditor from "../../components/editor/DisplayEditor";
 import { motion } from "framer-motion";
 
-export const Home = () => {
+const Home = () => {
   return (
     <PublicLayout>
       <div className="home-page">
@@ -61,3 +61,5 @@ export const Home = () => {
     </PublicLayout>
   );
 };
+
+export default Home;
