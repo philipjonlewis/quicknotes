@@ -22,7 +22,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // background-color: yellow;
       }
 
       .workspace-container {
@@ -129,6 +128,7 @@
         color: #a97866;
         width: fit-content;
         padding: 0.5rem 1rem;
+        height: 100%;
 
         p:nth-of-type(1) {
           border-radius: 0.5rem;
@@ -156,8 +156,15 @@
         align-items: center;
         padding: 0 1rem;
 
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 1rem;
         a {
           color: inherit;
+        }
+
+        .logo {
+          color: rgb(221, 221, 221);
+          font-weight: 500;
         }
       }
 
@@ -170,8 +177,9 @@
 
         .list-container {
           padding: 0 1rem;
-          width: 30%;
+          width: 20rem;
           height: 100%;
+
           .add-doc-container {
             height: 4rem;
             display: flex;
@@ -180,20 +188,41 @@
 
             .add-btn-container {
               display: flex;
+              flex-direction: row;
               justify-content: flex-start;
               align-items: center;
               height: 3rem;
-              width: 3rem;
+              width: fit-content;
               cursor: pointer;
               color: lightslategray;
+
+              &:hover {
+                p {
+                  opacity: 100%;
+                }
+              }
+
+              svg {
+                height: 2rem;
+              }
+
+              p {
+                opacity: 50%;
+                font-size: 0.8rem;
+                margin-left: 1rem;
+              }
             }
           }
 
           .list-proper {
+            border-right: 1px solid #e5e5e5;
+            height: 100%;
+            width: 100%;
+            // background-color: red;
             .item-container {
               padding: 0.5rem 0.5rem 0.5rem 0;
               margin-bottom: 0.5rem;
-              width: 80%;
+              // width: 80%;
               color: rgb(77, 77, 77);
               display: flex;
               justify-content: space-between;
@@ -261,15 +290,17 @@
             border-radius: 8px 8px 0 0;
             background-color: white;
             height: 100%;
-            width: 80%;
+            width: 100%;
           }
 
           .no-active {
             background-color: #ffe3d9;
             color: #a97866;
             width: fit-content;
-            padding: 0.5rem 1rem;
-
+            padding: 1rem 2rem;
+            margin-top: 12rem;
+            border: 1px solid rgb(231, 211, 211);
+            border-radius: 0.5rem;
             p:nth-of-type(1) {
               border-radius: 0.5rem;
               font-size: 1rem;

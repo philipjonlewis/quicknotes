@@ -100,6 +100,7 @@ const Dashboard = () => {
           {/* <Link to={"/account"}>
             <CogIcon height={24} strokeWidth={2} />
           </Link> */}
+          <p className="logo">QuickNotes</p>
         </div>
         <div className="workspace-container">
           <div className="list-container">
@@ -107,6 +108,7 @@ const Dashboard = () => {
               {" "}
               <div className="add-btn-container" onClick={addNewDocument}>
                 <DocumentAddIcon height={24} strokeWidth={2} />
+                <p>Add New Project</p>
               </div>
             </div>
             <div className="list-proper">
@@ -129,7 +131,7 @@ const Dashboard = () => {
               <EditorComponent document={activeDocument} />
             ) : (
               <div className="no-active">
-                <p>No Active Document</p>
+                <p>Select A Document</p>
               </div>
             )}
           </div>
