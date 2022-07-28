@@ -48,6 +48,10 @@
           font-size: 0.9rem;
           visibility: hidden;
         }
+
+        .subtitle {
+          color: white;
+        }
       }
 
       .hero-sample {
@@ -58,7 +62,7 @@
           padding: 1rem;
           background-color: white;
           border-radius: 8px;
-          background-color: red;
+          // background-color: red;
           width: 90%;
 
           -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
