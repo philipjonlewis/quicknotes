@@ -38,10 +38,37 @@ const DisplayEditor = () => {
               text: "All free!",
             },
           },
+          {
+            id: "3",
+            type: "checklist",
+            data: {
+              items: [
+                {
+                  text: "Task One",
+                  checked: true,
+                },
+                {
+                  text: "Task two",
+                  checked: false,
+                },
+              ],
+            },
+          },
+          {
+            id: "4",
+            type: "code",
+            data: {
+              code: "const hello = require(`hello`)",
+            },
+          },
         ],
       },
       onReady: () => {
         ejInstance.current = editor;
+      },
+      onChange: async (api, event) => {
+        let content = await editor.save();
+        console.log(content);
       },
       autofocus: true,
       tools: EDITOR_JS_TOOLS,

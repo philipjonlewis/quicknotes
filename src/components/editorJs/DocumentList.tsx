@@ -4,7 +4,7 @@ import { doc } from "firebase/firestore";
 import { firebaseDb } from "../../database/firebaseClient";
 import { deleteDoc } from "firebase/firestore";
 import { TrashIcon } from "@heroicons/react/outline";
-import sanitizeHtml from "sanitize-html";
+// import sanitizeHtml from "sanitize-html";
 
 const DocumentList = ({
   documentList,
@@ -29,14 +29,14 @@ const DocumentList = ({
   };
 
   const titleCleaner = (dirty: any) => {
-    const clean = sanitizeHtml(dirty, {
-      allowedTags: [],
-      allowedAttributes: {
-        // a: ["href"],
-      },
-      allowedIframeHostnames: [],
-    }).replace(/[^a-zA-Z0-9]/g, " ");
-    return clean;
+    // const clean = sanitizeHtml(dirty, {
+    //   allowedTags: [],
+    //   allowedAttributes: {
+    //     a: ["href"],
+    //   },
+    //   allowedIframeHostnames: [],
+    // }).replace(/[^a-zA-Z0-9]/g, " ");
+    return dirty;
   };
 
   return (
